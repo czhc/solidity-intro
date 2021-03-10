@@ -76,7 +76,7 @@ contract TestThrows {
         revert();
     }
     
-    function testThrow(){
-        throw;
-    }
+    // function testThrow(){
+    //     throw;
+    // }
 }
