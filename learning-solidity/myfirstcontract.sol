@@ -1,23 +1,28 @@
-// source: https://www.youtube.com/channel/UCaWes1eWQ9TbzA695gl_PtA
-
 pragma solidity ^0.4.0;
 
 interface Regulator {
     function checkValue(uint amount) returns (bool);
-    function load returns (bool);
+    function loan() returns (bool);
 }
 contract Bank is Regulator {
     uint private value;
+    address private owner; 
 
+    modifier ownerFunc {
+        require(owner == msg.sender);
+        _;
+    }
+    
     function Bank(uint amount){
         value = amount;
+        owner = msg.sender;
     }
 
-    function deposit(uint amount){
+    function deposit(uint amount) internal ownerFunc {
         value += amount;
     }
     
-    function withdraw(uint amount){
+    function withdraw(uint amount) private ownerFunc {
         if (checkValue(amount)){
             value -= amount; 
         }
@@ -28,7 +33,7 @@ contract Bank is Regulator {
     }    
     
     function checkValue(uint amount) returns (bool){
-        return amount >= value;
+        return value >= amount;
     }
     
     function loan() returns (bool){
@@ -37,7 +42,7 @@ contract Bank is Regulator {
 }
 
 
-contract MyFirstContract {
+contract MyFirstContract is Bank {
     string private name;
     uint private age; 
     
@@ -55,5 +60,23 @@ contract MyFirstContract {
     
     function getAge() returns (uint){
         return age;
+    }
+}
+
+contract TestThrows {
+    function testAssert(){
+        assert(false);
+    }
+    
+    function testRequire() {
+        require(false);
+    }
+    
+    function testRevert(){
+        revert();
+    }
+    
+    function testThrow(){
+        throw;
     }
 }
