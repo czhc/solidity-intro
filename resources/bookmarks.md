@@ -16,3 +16,4 @@
 # Fun Stuff
 
 1. Gitcoin Quests [link](https://gitcoin.co/quests)
+2. Building ERC-721 NFs with IPFS [link](https://medium.com/pinata/how-to-build-erc-721-nfts-with-ipfs-e76a21d8f914)
