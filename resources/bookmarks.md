@@ -8,5 +8,11 @@
 
 3. Furucombo exploit: [link](https://etherscan.io/tx/0x6a14869266a1dcf3f51b102f44b7af7d0a56f1766e5b1908ac80a6a23dbaf449)
 
+4. Parity/Polkadot contract suicide: [link](https://medium.com/cybermiles/i-accidentally-killed-it-and-evaporated-300-million-6b975dc1f76b)
+
 # Docs
 1. AAVE flashloans [v1](https://docs.aave.com/developers/v/1.0/tutorials/performing-a-flash-loan) [v2](https://docs.aave.com/developers/v/2.0/guides/flash-loans)
+
+# Fun Stuff
+
+1. Gitcoin Quests [link](https://gitcoin.co/quests)
