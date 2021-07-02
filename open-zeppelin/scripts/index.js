@@ -5,10 +5,12 @@
 async function main(){
 //  const accounts = await ethers.provider.listAccounts();
 //  console.log(accounts);
-  const address = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+  const address = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
   const Box = await ethers.getContractFactory('Box');
   const box = await Box.attach(address);
 
+  const value = await box.getValue();
+  console.log('Box value is: ', value.toString());
 }
 
 main()
