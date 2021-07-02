@@ -21,4 +21,8 @@ describe('Box', function(){
     await this.box.setValue(42);
     expect(await this.box.getValue()).to.equal(42);
   })
+
+  it('emits event ValueChanged', async function(){
+    await expect(this.box.setValue(42)).to.emit(this.box, 'ValueChanged');
+  })
 })
