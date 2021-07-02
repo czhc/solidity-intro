@@ -2,7 +2,12 @@
 
 const { expect }  = require('chai');
 
+// add test helpers
+// to use test helpers from waffle, install:
+// these: @nomiclabs/hardhat-waffle ethereum-waffle
+
 describe('Box', function(){
+
   before(async function(){
     this.Box = await ethers.getContractFactory('Box');
   });
@@ -14,6 +19,6 @@ describe('Box', function(){
 
   it('retrieve returns a value previously stored', async function(){
     await this.box.setValue(42);
-    expect((await this.box.getValue()).toString()).to.equal('42');
+    expect(await this.box.getValue()).to.equal(42);
   })
 })
