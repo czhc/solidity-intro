@@ -31,6 +31,5 @@ describe('Box', function(){
   it('reverts when unauthorized', async function(){
     const [owner, addr1] = await ethers.getSigners();
     await expect(this.box.setValue(100, { from: addr1 })).to.be.reverted;
-
   })
 })
