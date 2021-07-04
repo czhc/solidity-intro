@@ -7,6 +7,10 @@ import '@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol';
 contract BoxV2 is OwnableUpgradeable {
   uint256 private value;
 
+  // any new V2 variables can be added here if needed
+  //
+
+
   event ValueChanged(uint256 value);
 
   function initialize() initializer public {
